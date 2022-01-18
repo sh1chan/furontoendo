@@ -1,5 +1,11 @@
 # sh1chan's frontend (UI) for \*my Research!
 
+[![Elm](https://img.shields.io/badge/elm-0.19.1-blue)](https://elm-lang.org/news/the-syntax-cliff)
+
+```console
+elm reactor # visit http://localhost:8000/src/Main.elm
+```
+
 ```
 Drag and Drop based cards to store the information about an *Object
 - How much you should know about a Phone to buy ?
@@ -28,19 +34,25 @@ SimCard <*Obj>
 +-----------------------------------------+
 ```
 
-```console
-elm reactor # visit http://localhost:8000/src/Main.elm
-```
-
 ### UI
 ```
-<Board *LinkVisualization>
-  <Board *TreeView>
+<Board BuiltIn (Drag&Drop "Floated mode")>
+  <Component TreeView>
     -- View Routes
     -- View Boards
+    -- View Services
     -- View Applications
-      <Board *OptionsView>
-      </OptionsView>
   </TreeView>
-</LinkVisualization>
+  <App Product>
+    <Component OptionsView (updates *TreeView)>
+      ...
+    </Component>
+    <Service Share>
+      ...
+    </Share>
+    <Component Calc>
+      ...
+    </Calc>
+  </Product>
+</BuiltIn>
 ```
