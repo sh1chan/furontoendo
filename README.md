@@ -31,3 +31,16 @@ SimCard <*Obj>
 ```console
 elm reactor # visit http://localhost:8000/src/Main.elm
 ```
+
+### UI
+```
+<Board *LinkVisualization>
+  <Board *TreeView>
+    -- View Routes
+    -- View Boards
+    -- View Applications
+      <Board *OptionsView>
+      </OptionsView>
+  </TreeView>
+</LinkVisualization>
+```
