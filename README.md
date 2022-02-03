@@ -36,23 +36,29 @@ SimCard <*Obj>
 
 ### UI
 ```
-<Board BuiltIn (Drag&Drop "Floated mode")>
-  <Component TreeView>
-    -- View Routes
-    -- View Boards
-    -- View Services
-    -- View Applications
-  </TreeView>
-  <App Product>
-    <Component OptionsView (updates *TreeView)>
-      ...
-    </Component>
-    <Service Share>
-      ...
-    </Share>
-    <Component Calc>
-      ...
-    </Calc>
-  </Product>
-</BuiltIn>
+*Route
+├── *Board
+│   └── *App
+
+<Route Main>
+  <Board BuiltIn (Drag&Drop "Floated mode")>
+    <Component TreeView>
+      -- View Routes
+      -- View Boards
+      -- View Services
+      -- View Applications
+    </TreeView>
+    <App Product (Optional)>
+      <Component OptionsView (updates *TreeView)>
+        ...
+      </Component>
+      <Service Share>
+        ...
+      </Share>
+      <Component Calc>
+        ...
+      </Calc>
+    </Product>
+  </BuiltIn>
+</Main>
 ```
