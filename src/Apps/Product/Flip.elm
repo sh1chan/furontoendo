@@ -1,4 +1,4 @@
-module Apps.Cards.Flip exposing (main)
+module Apps.Product.Flip exposing (main)
 
 import Browser
 import Html exposing (Html, p, div, img, text)
@@ -8,7 +8,7 @@ import Html.Events exposing (onClick)
 
 static_path : String -> String
 static_path file
-  = "Apps/Cards/" ++ file
+  = "Apps/Product/" ++ file
 
 
 type CardData
