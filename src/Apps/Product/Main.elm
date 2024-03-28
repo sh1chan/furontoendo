@@ -1,12 +1,14 @@
-{-
+{- Notes only NotImplemented
+
 Card for Product information (Product Object)
 
   Attributes
   ----------
-  url - product url (from parsed resources)
-  name - product name
-  price - editable
-  picture - product picture
+  url - product url (from parsed resources) - Optional[localhost::]
+  name - product name                       -
+  price - editable                          -
+  picture - product picture                 -
+  quantity - editable                       - Optional[default=1]
 
   Methods (API)
   -------------
@@ -24,7 +26,7 @@ Card for Product information (Product Object)
     - NOTE: *url can't be updated, create a new one instead
 -}
 
-module Apps.Cards.Product exposing (main)
+module Apps.Product.Main exposing (main)
 
 import Browser
 import Html exposing (Html, div, input, p, img, text)
@@ -76,13 +78,20 @@ update msg state =
 
 
 product_get =
-  div [ onClick Update ]
-  [ img [ src "4rut41ru.jpg", width 300, height 300 ] []
+  -- div [ onClick Update ] - edit Mode
+  div []
+  [ img [ src "Apps/Product/4rut41ru.jpg", width 300, height 300 ] []
   , p [] [ text "Altair MUP" ]
   , p [] [ text "0" ]
   ]
 
+
 product_update =
+  -- Print the optionsView
+  1
+
+
+product_new =
   div []
   [ input [] [ text "Url" ]
   , input [] [ text "Name" ]
@@ -94,9 +103,23 @@ product_update =
 view : Int -> Html ProductState
 view model =
   if model == 0 then
-    product_get
+    div []
+    [ product_get
+    , product_get
+    ]
   else
     product_update
 
 main =
   Browser.sandbox { init = init, update = update, view = view }
+
+{-
+
+Product card
+  - View
+  - Edit
+    - *edit mode
+  - New (blank *product)
+    - By function call
+
+-}

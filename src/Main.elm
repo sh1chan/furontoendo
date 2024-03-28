@@ -1,6 +1,6 @@
 module Main exposing (main)
 
-import Apps.Cards.Flip as F
+import Apps.Product.Main as P
 
 main =
-  F.main
+  P.main
